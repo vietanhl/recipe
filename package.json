@@ -4,7 +4,9 @@
   "description": "JS project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -17,12 +19,8 @@
   },
   "homepage": "https://github.com/vietanhl/recipe#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "webpack": "^4.29.5"
+    "webpack": "^4.2.0",
+    "webpack-cli": "^3.2.3"
   },
-  "dependencies": {
-    "babel-polyfill": "^6.26.0"
-  }
+  "dependencies": {}
 }
