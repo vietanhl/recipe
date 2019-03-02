@@ -11,20 +11,19 @@ import {elements} from './views/base';
 const state = {};
 
 const controlSearch = async () => {
-    // get query from View
+        // get query from View
     const query = searchView.getInput();
-    console.log(query);
-
     if (query) {
         // create new search obj and add to state
         state.search = new Search(query);
         // prepare UI for results
-
+        searchView.clearInput();
+        searchView.clearResults();
         //search for recipes
         await state.search.getResults();
 
         //render results on UI
-        console.log(state.search.result);
+        searchView.renderResults(state.search.result);
     }
 }
 
@@ -33,6 +32,3 @@ elements.searchForm.addEventListener('submit', e =>{
     e.preventDefault();
     controlSearch();
 })
-
-const search = new Search ('pizza');
-search.getResults();
